@@ -40,11 +40,24 @@ public class Main {
             // on Windows there is actually no limit for process
             // you will only experience decreasing performance...
 
+            // Debian GNU/Linux 11
+            // max. threads:
+            // cat /proc/sys/kernel/threads-max
+            // user process limit:
+            // ulimit -u
+
             VirtualThreadsDemo instance = new VirtualThreadsDemo();
             instance.info();
-            instance.demo(threadCount);
-            
-        } catch (Exception ex) {
+
+            // 'platform threads' are bound to OS
+            // => number of instances limited
+            instance.demo(VirtualThreadsDemo.PLATFORM, threadCount);
+
+            // 'virtual threads' are orchestrated within JVM
+            // => potentially unlimited
+            instance.demo(VirtualThreadsDemo.VIRTUAL, threadCount);
+
+        } catch (NumberFormatException ex) {
             System.err.println("Invalid input!");
         }
 
