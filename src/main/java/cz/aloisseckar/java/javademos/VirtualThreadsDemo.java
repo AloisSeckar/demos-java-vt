@@ -10,8 +10,6 @@ public class VirtualThreadsDemo {
     // user process limit:
     // ulimit -u
 
-    private static final int THREAD_COUNT = 5000;
-
     public boolean releaseThreads;
 
     public void info() {
@@ -25,7 +23,7 @@ public class VirtualThreadsDemo {
         System.out.println();
     }
 
-    public void demo() {
+    public void demo(int threadCount) {
 
         // 'platform threads' are bound to OS
         // => number of instances limited
@@ -34,7 +32,7 @@ public class VirtualThreadsDemo {
         releaseThreads = false;
         int platformThreadsGenerated = 0;
         try {
-            while (platformThreadsGenerated < THREAD_COUNT) {
+            while (platformThreadsGenerated < threadCount) {
                 Thread.ofPlatform().start(new SimpleTask("platform-" + platformThreadsGenerated));
                 platformThreadsGenerated++;
                 if (platformThreadsGenerated % 1000 == 0) {
@@ -59,7 +57,7 @@ public class VirtualThreadsDemo {
         releaseThreads = false;
         int virtualThreadsGenerated = 0;
         try {
-            while (virtualThreadsGenerated < THREAD_COUNT) {
+            while (virtualThreadsGenerated < threadCount) {
                 Thread.ofVirtual().start(new SimpleTask("virtual-" + virtualThreadsGenerated));
                 virtualThreadsGenerated++;
                 if (virtualThreadsGenerated % 1000 == 0) {

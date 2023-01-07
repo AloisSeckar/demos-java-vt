@@ -1,5 +1,7 @@
 package cz.aloisseckar.java.javademos;
 
+import java.util.Scanner;
+
 /**
  * This demo shows new preview feature from Java 19 - Virtual Threads
  *
@@ -25,13 +27,26 @@ public class Main {
         System.out.println(System.getProperty("java.specification.vendor"));
         //
 
-        // NOTE: this will only work on Unix-based platforms
-        // on Windows there is actually no limit for process
-        // you will only experience decreasing performance...
+        System.out.println();
+        System.out.println("How many threads you want to create?");
+        Scanner in = new Scanner(System.in);
+        String input = in.nextLine();
+        System.out.println();
 
-        VirtualThreadsDemo instance = new VirtualThreadsDemo();
-        instance.info();
-        instance.demo();
+        try {
+            int threadCount = Integer.valueOf(input);
+
+            // NOTE: this will only work on Unix-based platforms
+            // on Windows there is actually no limit for process
+            // you will only experience decreasing performance...
+
+            VirtualThreadsDemo instance = new VirtualThreadsDemo();
+            instance.info();
+            instance.demo(threadCount);
+            
+        } catch (Exception ex) {
+            System.err.println("Invalid input!");
+        }
 
     }
 }
