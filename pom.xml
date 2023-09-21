@@ -3,14 +3,14 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>cz.alois-seckar.java</groupId>
     <artifactId>JavaDemos-VT</artifactId>
-    <version>1.0</version>
+    <version>2.0</version>
     <packaging>jar</packaging>
     
     <properties>
-        <java.version>19</java.version>
+        <java.version>21</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>19</maven.compiler.source>
-        <maven.compiler.target>19</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
     </properties>
     
     <dependencies>
@@ -18,7 +18,7 @@
             <!-- for simplier getter/setter/constructor declarations -->
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.22</version>
+            <version>1.18.30</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -43,11 +43,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.10.1</version>
                 <configuration>
-                    <release>19</release>
-                    <compilerArgs>
-                        <!-- allows 'preview' Java features -->
-                        --enable-preview
-                    </compilerArgs>
+                    <release>21</release>
                 </configuration>
             </plugin>
         </plugins>

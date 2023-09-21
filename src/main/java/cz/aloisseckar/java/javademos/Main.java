@@ -3,16 +3,18 @@ package cz.aloisseckar.java.javademos;
 import java.util.Scanner;
 
 /**
- * This demo shows new preview feature from Java 19 - Virtual Threads
+ * This demo shows new feature from Java 21 - Virtual Threads
  *
- * Introduced: Java 19
- * Finalized: Not yet
+ * HISTORY:
+ * Java 19 - Preview (https://openjdk.org/jeps/425)
+ * Java 20 - Second preview (https://openjdk.org/jeps/436)
+ * Java 21 - Finalized (https://openjdk.org/jeps/444)
  *
  * Further reading:
- * https://blogs.oracle.com/javamagazine/post/java-loom-virtual-threads-platform-threads
- * https://openjdk.org/jeps/425
+ * https://blogs.oracle.com/javamagazine/post/java-loom-virtual-threads-platform-threads (Java 19)
+ * https://blogs.oracle.com/javamagazine/post/java-virtual-threads (Java 21)
  *
- * @author alois.seckar@atos.net
+ * @author alois.seckar@gmail.com
  */
 public class Main {
 

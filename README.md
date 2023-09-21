@@ -1,7 +1,7 @@
-# Java 19 Virtual Threads
+# Java 21 Virtual Threads
 
 This application shows the difference between the old 'platform' and new 'virtual' threads
-in Java 19. While 'platform' threads are bind to underlying OS and thus potentially limited,
+in Java 21. While 'platform' threads are bind to underlying OS and thus potentially limited,
 'virtual' threads exist only inside JVM and you can have as many as you want. 
 
 In this example the program first trying to create N 'platform' threads, while this is
@@ -18,9 +18,9 @@ Therefore, a Linux machine is required to run this demo and see the "correct" re
 
 ## Usage
 Checkout and `mvn clean install` the project and then either run
-`java --enable-preview -jar target\JavaDemos-2.0.jar` directly or move the `jar` 
+`java -jar target\JavaDemos-VT-2.0.jar` directly or move the `jar` 
 to target Linux platform with Java and run the command there.
 
 ## Author
-* alois.seckar@atos.net
+* alois.seckar@gmail.com
 * http://alois-seckar.cz
